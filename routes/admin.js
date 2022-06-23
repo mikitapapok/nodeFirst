@@ -3,13 +3,15 @@ const path = require("path");
 
 const rootDIr = require("../utils/routPath");
 const router = express.Router();
+
+const dataList=[]
 router.get("/product-card", (req, res) => {
   res.sendFile(path.join(rootDIr, "view", "admin.html"));
 });
 router.post("/product-card", (req, res) => {
-  console.log(req.body.aloha);
+  dataList.push(req.body.aloha);
 
   res.redirect("/");
 });
 
-module.exports = router;
+module.exports = {router,dataList};
