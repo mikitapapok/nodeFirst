@@ -1,14 +1,7 @@
 const express = require("express");
-
-const path = require("path");
-
-const rootDIr = require("../utils/routPath");
-const adminRouter = require("./admin");
+const shopController = require("../constrollers/chopController");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  console.log("data from admin", adminRouter.dataList.join(""));
-  res.sendFile(path.join(rootDIr, "view", "shop.html"));
-});
+router.get("/", shopController);
 
 module.exports = router;
