@@ -1,7 +1,5 @@
 const express = require("express");
-const path = require("path");
 
-const rootDIr = require("../utils/routPath");
 const adminController = require("../constrollers/adminController");
 const router = express.Router();
 

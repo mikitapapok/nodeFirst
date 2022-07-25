@@ -1,4 +1,4 @@
-const product = [];
+const getDb = require("../utils/database").getDb;
 
 module.exports = class Product {
   constructor(data) {
@@ -6,9 +6,10 @@ module.exports = class Product {
   }
 
   save() {
-    product.push(this.title);
-  }
-  getAll() {
-    return product;
+    const db = getDb();
+    return db
+      .collection("product")
+      .insertOne(this.title)
+      .then((result) => console.log(result));
   }
 };

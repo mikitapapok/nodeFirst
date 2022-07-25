@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
 }
+.header-nav {
+  width: 60%;
+}
 .header-nav-list {
   list-style-type: none;
   display: flex;
@@ -10,4 +13,7 @@
 
 .header-nav-list__component:nth-child(2) {
   margin-left: 20px;
+}
+.header-nav-list__component:last-child {
+  margin-left: auto;
 }
